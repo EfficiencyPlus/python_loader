@@ -18,7 +18,7 @@ def send_mail(rowNum):
     # newmail.Display() 
     try:
         newmail.Send()
-        print("Mail sent successfully")
+        print("Correo enviado exitosamente")
     except Exception as e:
-        print(f"Mail failed to send due to: {e}")
+        print(f"Ocurrió un error al enviar el correo: {e}")
 
