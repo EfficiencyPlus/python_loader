@@ -5,7 +5,7 @@ from datetime import datetime, time
 import os
 
 # Define the path to the Excel files directory
-excel_dir = r"C:\Users\loren\Desktop\Test"
+excel_dir = r"C:\Users\loren\Desktop\python_loader"
 
 # Create a list of dictionaries, where each dictionary represents a row in the Excel sheet
 rows = []
