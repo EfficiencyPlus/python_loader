@@ -19,14 +19,48 @@ for filename in os.listdir(excel_dir):
         wb = openpyxl.load_workbook(excel_file)
 
         sheet = wb.active
+        # for row in sheet.iter_rows(values_only=True):
+        #     row_dict = {}
+        #     for idx, cell in enumerate(row):
+        #         if isinstance(cell, datetime):
+        #             cell = cell.timestamp()
+        #         elif isinstance(cell, time):
+        #             cell = cell.strftime('%H:%M:%S')
+        #         row_dict[sheet.cell(row=1, column=idx+1).value] = cell
+        #     rows.append(row_dict)
+
+
+
+        # for row in sheet.iter_rows(values_only=True):
+        #     row_dict = {}
+        #     for idx, cell in enumerate(row):
+        #         if idx == 2:  # Assuming column C is at index 2
+        #             if isinstance(cell, datetime):
+        #                 cell = cell.strftime('%m/%d/%Y')
+        #             else:
+        #                 # Handle the case if the cell value is not a datetime object
+        #                 cell = str(cell).split()[0]
+        #         elif isinstance(cell, datetime):
+        #             cell = cell.timestamp()
+        #         elif isinstance(cell, time):
+        #             cell = cell.strftime('%H:%M:%S')
+        #         row_dict[sheet.cell(row=1, column=idx + 1).value] = cell
+        #     rows.append(row_dict)
         for row in sheet.iter_rows(values_only=True):
             row_dict = {}
             for idx, cell in enumerate(row):
-                if isinstance(cell, datetime):
-                    cell = cell.timestamp()
-                elif isinstance(cell, time):
+                if idx != 2:  # Exclude column C
+                    if isinstance(cell, (int, float)):
+                        cell = str(cell)
+                else:
+                    if isinstance(cell, datetime):
+                        cell = cell.strftime('%m/%d/%Y')
+                    else:
+                        # Handle the case if the cell value is not a datetime object
+                        cell = str(cell).split()[0]
+                if isinstance(cell, time):
                     cell = cell.strftime('%H:%M:%S')
-                row_dict[sheet.cell(row=1, column=idx+1).value] = cell
+                row_dict[sheet.cell(row=1, column=idx + 1).value] = cell
             rows.append(row_dict)
 
 # Write to G. sheets
@@ -37,7 +71,7 @@ from google.oauth2 import service_account
 # Define G. sheets variables & credentials
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
 KEY = 'key.json'
-SPREADSHEET_ID ='1QeJpkDbajigV-RBy7Lkb70eM03nm-l0kwc-QpQT6ChQ'
+SPREADSHEET_ID ='1iuqRmwP0j9xeynqYMsHkjpdcYXIQWKr8AfAI_Np8v40' #'1QeJpkDbajigV-RBy7Lkb70eM03nm-l0kwc-QpQT6ChQ'
 
 creds = None
 creds = service_account.Credentials.from_service_account_file(KEY, scopes=SCOPES)
@@ -52,7 +86,7 @@ for row in rows:
     data.append([row[header] for header in headers])
 
 # Retrieve the existing data from the sheet
-result = sheets_api.values().get(spreadsheetId=SPREADSHEET_ID, range='Hoja1').execute()       
+result = sheets_api.values().get(spreadsheetId=SPREADSHEET_ID, range='Cheques').execute()       
 existing_data = result.get('values', [])
 
 # Create a set of the existing unique IDs
@@ -70,13 +104,13 @@ if new_data:
     try:
         # Insert the new data into a new sheet in the Google Sheets document
         append_result = sheets_api.values().append(spreadsheetId=SPREADSHEET_ID,
-                                range='Hoja1!A1',
+                                range='Cheques!A1',
                                 valueInputOption='USER_ENTERED',
                                 insertDataOption='INSERT_ROWS',
                                 body={'values': new_data}).execute()
         rowNum = append_result.get('updates').get('updatedRows')
         print(f"{rowNum} filas insertadas.")
-        send_mail(rowNum)
+        #send_mail(rowNum)
 
     except Exception as e:
         print(f"Error al insertar los datos: {e}")
