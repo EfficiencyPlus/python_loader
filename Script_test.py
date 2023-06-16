@@ -35,6 +35,33 @@ rows = []
 #                     cell = cell.strftime('%H:%M:%S')
 #                 row_dict[sheet.cell(row=1, column=idx + 1).value] = cell
 #             rows.append(row_dict)
+# for filename in os.listdir(excel_dir):
+#     if filename.endswith('.xlsx'): # Check if the file is an Excel file
+#         excel_file = os.path.join(excel_dir, filename)
+        
+#         # Load the Excel file and select the first sheet
+#         wb = openpyxl.load_workbook(excel_file)
+
+#         sheet = wb.active
+#         for row in sheet.iter_rows(values_only=True):
+#             row_dict = {}
+#             for idx, cell in enumerate(row):
+#                 if idx != 2:  # Exclude column C
+#                     if isinstance(cell, (int, float)):
+#                         cell = str(cell)
+#                     else:
+#                         cell = str(cell)
+#                 else:
+#                     if isinstance(cell, datetime):
+#                         cell = cell.strftime('%m/%d/%Y')
+#                     else:
+#                         # Handle the case if the cell value is not a datetime object
+#                         cell = str(cell).split()[0]
+#                 if isinstance(cell, time):
+#                     cell = cell.strftime('%H:%M:%S')
+#                 row_dict[sheet.cell(row=1, column=idx + 1).value] = cell
+#             rows.append(row_dict)
+
 for filename in os.listdir(excel_dir):
     if filename.endswith('.xlsx'): # Check if the file is an Excel file
         excel_file = os.path.join(excel_dir, filename)
@@ -53,7 +80,7 @@ for filename in os.listdir(excel_dir):
                         cell = str(cell)
                 else:
                     if isinstance(cell, datetime):
-                        cell = cell.strftime('%m/%d/%Y')
+                        cell = cell.strftime('%m/%d/%Y %H:%M:%S')
                     else:
                         # Handle the case if the cell value is not a datetime object
                         cell = str(cell).split()[0]
