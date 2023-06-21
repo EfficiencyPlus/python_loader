@@ -16,6 +16,8 @@ def load_File():
 
     # Create a list of dictionaries, where each dictionary represents a row in the Excel sheet
     rows = []
+    print(f"Leyendo datos del archivo de Excel desde {excel_dir}")
+
     for filename in os.listdir(excel_dir):
         if filename.endswith('.xlsx'): # Check if the file is an Excel file
             excel_file = os.path.join(excel_dir, filename)
@@ -45,6 +47,7 @@ def load_File():
 
 
     # Write to G. sheets
+    print("Autenticando en Google Sheets")
     from google.oauth2.credentials import Credentials
     from googleapiclient.discovery import build
     from google.oauth2 import service_account
@@ -77,6 +80,7 @@ def load_File():
         existing_unique_ids.add(row[1])
 
     # Insert new data into the sheet
+    print("Insertando datos en Google")
     new_data = []
     for row in data:
         if row[1] not in existing_unique_ids:
@@ -85,37 +89,37 @@ def load_File():
     if new_data:
         try:
             # Insert the new data into a new sheet in the Google Sheets document
-            append_result = sheets_api.values().append(spreadsheetId=SPREADSHEET_ID,
-                                    range='Cheques!A1',
-                                    valueInputOption='USER_ENTERED',
-                                    insertDataOption='INSERT_ROWS',
-                                    body={'values': new_data}).execute()
-            rowNum = append_result.get('updates').get('updatedRows')
+            append_result = sheets_api.values().append(
+                spreadsheetId=SPREADSHEET_ID,
+                range='Cheques!A1',
+                valueInputOption='USER_ENTERED',
+                insertDataOption='INSERT_ROWS',
+                body={'values': new_data}
+            ).execute()
+            rowNum = append_result['updates']['updatedRows']
             print(f"{rowNum} filas insertadas.")
-            #send_mail(rowNum)
-            with open(log_file_path, "a") as log_file:
-                # Write the current date and time to the log file
-                log_file.write(f"Execution Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: ")
-                log_file.write(f"{rowNum} filas insertadas.\n")
-                log_file.write("\n") 
-
         except Exception as e:
             print(f"Error al insertar los datos: {e}")
+        else:
+            print("Datos insertados correctamente!")
+        finally:
             with open(log_file_path, "a") as log_file:
-                # Write the current date and time to the log file
                 log_file.write(f"Execution Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: ")
-                log_file.write(f"Error al insertar los datos: {e}.\n")
-                log_file.write("\n") 
-
-        print("Datos insertados correctamente")
+                if 'rowNum' in locals():
+                    log_file.write(f"{rowNum} filas insertadas.\n")
+                else:
+                    log_file.write("Error al insertar los datos.\n")
+                log_file.write("\n")
     else:
         print("No hay datos nuevos para insertar")
         with open(log_file_path, "a") as log_file:
-            # Write the current date and time to the log file
             log_file.write(f"Execution Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: ")
-            log_file.write(f"No hay datos nuevos para insertar\n")
-            log_file.write("\n") 
+            log_file.write("No hay datos nuevos para insertar\n")
+            log_file.write("\n")
 
 
 # Call the load_File function directly
 load_File()
+import time
+print("Esta ventana se cerrará en 3 segundos")
+time.sleep(3)

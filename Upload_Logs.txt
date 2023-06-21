@@ -1,2 +1,18 @@
 Execution Date: 2023-06-19 19:22:52: No hay datos nuevos para insertar
 
+Execution Date: 2023-06-20 20:58:55: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:00:11: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-20 21:00:38: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:03:33: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:06:58: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:09:02: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:09:43: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-20 21:19:20: 5902 filas insertadas.
+
