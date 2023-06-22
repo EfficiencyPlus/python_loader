@@ -16,3 +16,17 @@ Execution Date: 2023-06-20 21:09:43: No hay datos nuevos para insertar
 
 Execution Date: 2023-06-20 21:19:20: 5902 filas insertadas.
 
+Execution Date: 2023-06-20 21:34:19: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:34:40: Error al cargar el archivo de Excel: [Errno 13] Permission denied: 'C:\\Users\\loren\\Desktop\\python_loader\\~$Cheques-2023-05-21 (1).xlsx'.
+
+Execution Date: 2023-06-20 21:36:18: 5 filas insertadas.
+
+Execution Date: 2023-06-21 18:02:48: 5902 filas insertadas.
+
+Execution Date: 2023-06-21 18:05:56: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-21 18:06:18: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-21 18:07:48: No hay datos nuevos para insertar
+
