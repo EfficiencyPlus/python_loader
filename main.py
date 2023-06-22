@@ -6,7 +6,6 @@ def load_File():
 
     log_file_path = os.path.join(os.path.dirname(__file__), "Upload_Logs.txt")
     excel_dir = os.path.dirname(os.path.abspath(__file__))
-    KEY = os.path.join(os.path.dirname(__file__), "key.json")
 
     rows = []
 
@@ -51,9 +50,7 @@ def load_File():
         from googleapiclient.discovery import build
         from google.oauth2 import service_account
 
-        current_directory = os.getcwd()
         SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-        #KEY = r'C:\Users\loren\Desktop\python_loader\key.json'
         KEY = os.path.join(os.path.dirname(__file__), "key.json")
 
         SPREADSHEET_ID ='1iuqRmwP0j9xeynqYMsHkjpdcYXIQWKr8AfAI_Np8v40'
