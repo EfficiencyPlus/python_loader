@@ -30,3 +30,21 @@ Execution Date: 2023-06-21 18:06:18: No hay datos nuevos para insertar
 
 Execution Date: 2023-06-21 18:07:48: No hay datos nuevos para insertar
 
+Execution Date: 2023-06-21 22:01:51: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-21 22:02:18: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-21 22:02:46: 5902 filas insertadas
+
+Execution Date: 2023-06-21 22:05:54: Error al cargar el archivo de Excel: [WinError 3] El sistema no puede encontrar la ruta especificada: 'C:\\Users\\loren\\Documents\\python_loader'.
+
+Execution Date: 2023-06-21 22:06:02: Error al cargar el archivo de Excel: [WinError 3] El sistema no puede encontrar la ruta especificada: 'C:\\Users\\loren\\Documents\\python_loader'.
+
+Execution Date: 2023-06-21 22:08:23: Error al cargar el archivo de Excel: [WinError 3] El sistema no puede encontrar la ruta especificada: 'C:\\Users\\loren\\Desktop\\python_loader\\python_loader'.
+
+Execution Date: 2023-06-21 22:08:30: Error al cargar el archivo de Excel: [WinError 3] El sistema no puede encontrar la ruta especificada: 'C:\\Users\\loren\\Desktop\\python_loader\\python_loader'.
+
+Execution Date: 2023-06-21 22:09:19: 5902 filas insertadas
+
+Execution Date: 2023-06-21 22:10:46: 4 filas insertadas
+

@@ -4,10 +4,12 @@ def load_File():
     from datetime import datetime, time
     import os
 
-    excel_dir = r"C:\Users\loren\Desktop\python_loader"
     log_file_path = os.path.join(os.path.dirname(__file__), "Upload_Logs.txt")
+    excel_dir = os.path.dirname(os.path.abspath(__file__))
+    KEY = os.path.join(os.path.dirname(__file__), "key.json")
 
     rows = []
+
     print("""  
 ********************************************************************
   _____ _____ _____ ___ ____ ___ _____ _   _  ______   __        
@@ -51,7 +53,9 @@ def load_File():
 
         current_directory = os.getcwd()
         SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
-        KEY = r'C:\Users\loren\Desktop\python_loader\key.json'
+        #KEY = r'C:\Users\loren\Desktop\python_loader\key.json'
+        KEY = os.path.join(os.path.dirname(__file__), "key.json")
+
         SPREADSHEET_ID ='1iuqRmwP0j9xeynqYMsHkjpdcYXIQWKr8AfAI_Np8v40'
 
         creds = service_account.Credentials.from_service_account_file(KEY, scopes=SCOPES)
@@ -86,7 +90,7 @@ def load_File():
                     body={'values': new_data}
                 ).execute()
                 rowNum = append_result['updates']['updatedRows']
-                print(f"{rowNum} filas insertadas.")
+                print(f"{rowNum} filas insertadas")
             except Exception as e:
                 print(f"Error al insertar los datos: {e}")
                 with open(log_file_path, "a") as log_file:
