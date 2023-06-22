@@ -97,7 +97,7 @@ def load_File():
                 print("Datos insertados correctamente!")
                 with open(log_file_path, "a") as log_file:
                     log_file.write(f"Execution Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}: ")
-                    log_file.write(f"{rowNum} filas insertadas.\n")
+                    log_file.write(f"{rowNum} filas insertadas\n")
                     log_file.write("\n")
         else:
             print("No hay datos nuevos para insertar")
