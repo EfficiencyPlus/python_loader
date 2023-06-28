@@ -1,5 +1,4 @@
 def load_File():
-    from Send_Mail import send_mail
     import openpyxl
     from datetime import datetime, time
     import os
@@ -37,7 +36,7 @@ def load_File():
                                 cell = str(cell)
                         else:
                             if isinstance(cell, datetime):
-                                cell = cell.strftime('%m/%d/%Y %H:%M:%S')
+                                cell = cell.strftime('%Y-%m-%d %H:%M:%S')
                             else:
                                 cell = str(cell).split()[0]
                         if isinstance(cell, time):
@@ -65,7 +64,7 @@ def load_File():
         for row in rows:
             data.append([row[header] for header in headers])
 
-        result = sheets_api.values().get(spreadsheetId=SPREADSHEET_ID, range='Cheques').execute()
+        result = sheets_api.values().get(spreadsheetId=SPREADSHEET_ID, range='Example').execute()
         existing_data = result.get('values', [])
 
         existing_unique_ids = set()
@@ -81,7 +80,7 @@ def load_File():
             try:
                 append_result = sheets_api.values().append(
                     spreadsheetId=SPREADSHEET_ID,
-                    range='Cheques!A1',
+                    range='Example!A1',
                     valueInputOption='USER_ENTERED',
                     insertDataOption='INSERT_ROWS',
                     body={'values': new_data}
