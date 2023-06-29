@@ -6,8 +6,8 @@ def load_File():
     # Define variables
     log_file_path = os.path.join(os.path.dirname(__file__), "Upload_Logs.txt")
     excel_dir = os.path.dirname(os.path.abspath(__file__))
-    SPREADSHEET_ID ='1iuqRmwP0j9xeynqYMsHkjpdcYXIQWKr8AfAI_Np8v40'
-    tabname ="Cheques"
+    SPREADSHEET_ID =''
+    tabname = ""
 
     rows = []
 
