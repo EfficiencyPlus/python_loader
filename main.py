@@ -3,8 +3,11 @@ def load_File():
     from datetime import datetime, time
     import os
 
+    # Define variables
     log_file_path = os.path.join(os.path.dirname(__file__), "Upload_Logs.txt")
     excel_dir = os.path.dirname(os.path.abspath(__file__))
+    SPREADSHEET_ID ='1iuqRmwP0j9xeynqYMsHkjpdcYXIQWKr8AfAI_Np8v40'
+    tabname ="Cheques"
 
     rows = []
 
@@ -52,8 +55,6 @@ def load_File():
         SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
         KEY = os.path.join(os.path.dirname(__file__), "key.json")
 
-        SPREADSHEET_ID ='1iuqRmwP0j9xeynqYMsHkjpdcYXIQWKr8AfAI_Np8v40'
-
         creds = service_account.Credentials.from_service_account_file(KEY, scopes=SCOPES)
 
         service = build('sheets', 'v4', credentials=creds)
@@ -64,7 +65,7 @@ def load_File():
         for row in rows:
             data.append([row[header] for header in headers])
 
-        result = sheets_api.values().get(spreadsheetId=SPREADSHEET_ID, range='Example').execute()
+        result = sheets_api.values().get(spreadsheetId=SPREADSHEET_ID, range=tabname).execute()
         existing_data = result.get('values', [])
 
         existing_unique_ids = set()
@@ -80,7 +81,7 @@ def load_File():
             try:
                 append_result = sheets_api.values().append(
                     spreadsheetId=SPREADSHEET_ID,
-                    range='Example!A1',
+                    range=f'{tabname}!A1',
                     valueInputOption='USER_ENTERED',
                     insertDataOption='INSERT_ROWS',
                     body={'values': new_data}
