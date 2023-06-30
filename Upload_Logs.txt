@@ -66,3 +66,9 @@ Execution Date: 2023-06-28 17:44:22: Error al insertar los datos: unsupported op
 
 Execution Date: 2023-06-28 17:46:35: 4 filas insertadas
 
+Execution Date: 2023-06-29 18:14:14: 13 filas insertadas
+
+Execution Date: 2023-06-29 18:22:10: 10 filas insertadas
+
+Execution Date: 2023-06-29 18:24:15: No hay datos nuevos para insertar
+

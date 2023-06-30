@@ -1,0 +1,70 @@
+Execution Date: 2023-06-19 19:22:52: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-20 20:58:55: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:00:11: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-20 21:00:38: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:03:33: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:06:58: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:09:02: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:09:43: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-20 21:19:20: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:34:19: 5902 filas insertadas.
+
+Execution Date: 2023-06-20 21:34:40: Error al cargar el archivo de Excel: [Errno 13] Permission denied: 'C:\\Users\\loren\\Desktop\\python_loader\\~$Cheques-2023-05-21 (1).xlsx'.
+
+Execution Date: 2023-06-20 21:36:18: 5 filas insertadas.
+
+Execution Date: 2023-06-21 18:02:48: 5902 filas insertadas.
+
+Execution Date: 2023-06-21 18:05:56: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-21 18:06:18: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-21 18:07:48: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-21 22:01:51: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-21 22:02:18: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-21 22:02:46: 5902 filas insertadas
+
+Execution Date: 2023-06-21 22:05:54: Error al cargar el archivo de Excel: [WinError 3] El sistema no puede encontrar la ruta especificada: 'C:\\Users\\loren\\Documents\\python_loader'.
+
+Execution Date: 2023-06-21 22:06:02: Error al cargar el archivo de Excel: [WinError 3] El sistema no puede encontrar la ruta especificada: 'C:\\Users\\loren\\Documents\\python_loader'.
+
+Execution Date: 2023-06-21 22:08:23: Error al cargar el archivo de Excel: [WinError 3] El sistema no puede encontrar la ruta especificada: 'C:\\Users\\loren\\Desktop\\python_loader\\python_loader'.
+
+Execution Date: 2023-06-21 22:08:30: Error al cargar el archivo de Excel: [WinError 3] El sistema no puede encontrar la ruta especificada: 'C:\\Users\\loren\\Desktop\\python_loader\\python_loader'.
+
+Execution Date: 2023-06-21 22:09:19: 5902 filas insertadas
+
+Execution Date: 2023-06-21 22:10:46: 4 filas insertadas
+
+Execution Date: 2023-06-21 22:15:30: 11 filas insertadas
+
+Execution Date: 2023-06-28 17:03:24: Error al cargar el archivo de Excel: <HttpError 403 when requesting https://sheets.googleapis.com/v4/spreadsheets/1dceZPs9FWYF5I0uTLSXmdaCW3Qb9UEGFgqz8wn8gKuk/values/Example?alt=json returned "The caller does not have permission". Details: "The caller does not have permission">.
+
+Execution Date: 2023-06-28 17:05:35: Error al cargar el archivo de Excel: <HttpError 400 when requesting https://sheets.googleapis.com/v4/spreadsheets/1iuqRmwP0j9xeynqYMsHkjpdcYXIQWKr8AfAI_Np8v40/values/Example?alt=json returned "Unable to parse range: Example". Details: "Unable to parse range: Example">.
+
+Execution Date: 2023-06-28 17:06:08: Error al cargar el archivo de Excel: <HttpError 400 when requesting https://sheets.googleapis.com/v4/spreadsheets/1iuqRmwP0j9xeynqYMsHkjpdcYXIQWKr8AfAI_Np8v40/values/Example?alt=json returned "Unable to parse range: Example". Details: "Unable to parse range: Example">.
+
+Execution Date: 2023-06-28 17:36:37: Error al cargar el archivo de Excel: <HttpError 400 when requesting https://sheets.googleapis.com/v4/spreadsheets/1iuqRmwP0j9xeynqYMsHkjpdcYXIQWKr8AfAI_Np8v40/values/Example?alt=json returned "Unable to parse range: Example". Details: "Unable to parse range: Example">.
+
+Execution Date: 2023-06-28 17:43:18: No hay datos nuevos para insertar
+
+Execution Date: 2023-06-28 17:43:35: Error al insertar los datos: <HttpError 400 when requesting https://sheets.googleapis.com/v4/spreadsheets/1iuqRmwP0j9xeynqYMsHkjpdcYXIQWKr8AfAI_Np8v40/values/Example%21A1:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS&alt=json returned "Unable to parse range: Example!A1". Details: "Unable to parse range: Example!A1">.
+
+Execution Date: 2023-06-28 17:44:22: Error al insertar los datos: unsupported operand type(s) for &: 'str' and 'str'.
+
+Execution Date: 2023-06-28 17:46:35: 4 filas insertadas
+
+Execution Date: 2023-06-29 18:14:14: 13 filas insertadas
+
