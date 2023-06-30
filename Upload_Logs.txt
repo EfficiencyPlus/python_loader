@@ -60,3 +60,7 @@ Execution Date: 2023-06-29 18:01:19: Error al insertar los datos: <HttpError 400
 
 Execution Date: 2023-06-29 18:01:38: 16 filas insertadas
 
+Execution Date: 2023-06-29 18:06:26: 9 filas insertadas
+
+Execution Date: 2023-06-29 18:07:36: 10 filas insertadas
+
